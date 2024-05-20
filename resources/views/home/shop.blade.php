@@ -20,7 +20,7 @@
 
 <body>
     <div class="hero_area">
-        @include('home.header')
+   
 
         <section class="shop_section layout_padding">
             <div class="container">
@@ -30,34 +30,33 @@
                     </h2>
                 </div>
                 <div class="row">
-                    @if(isset($products) && $products->count() > 0)
-                        @foreach($products as $product)
+                   
+                        @foreach($product as $products)
                         <div class="col-sm-6 col-md-4 col-lg-3">
                             <div class="box">
                                 <div class="img-box">
-                                    <img src="arts/{{$product->image}}" alt="{{ $product->title }}">
+                                    <img src="arts/{{$products->image}}" alt=>
                                 </div>
                                 <div class="detail-box">
                                     <h6>
-                                        {{$product->title}}
+                                        {{$products->title}}
                                     </h6>
                                     <h6>
                                         Price
                                         <span>
-                                            ${{$product->price}}
+                                            ${{$products->price}}
                                         </span>
                                     </h6>
                                 </div>
                                 <div style="padding: 10px">
-                                    <a class="btn btn-danger" href="{{ url('details', $product->id) }}">Details</a>
-                                    <a class="btn btn-primary" href="{{ url('add', $product->id) }}">Add to cart</a>
+                                    <a class="btn btn-danger" href="{{ url('details', $products->id) }}">Details</a>
+                                    <a class="btn btn-primary" href="{{ url('add', $products->id) }}">Add to cart</a>
                                 </div>
                             </div>
                         </div>
                         @endforeach
-                    @else
-                        <p>No products available.</p>
-                    @endif
+                    
+                   
                 </div>
             </div>
         </section>

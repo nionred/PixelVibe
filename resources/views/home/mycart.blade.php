@@ -55,13 +55,40 @@
   <div class="hero_area">
     <!-- header section strats -->
     @include('home.header')
+
       <div class = "div_deg">
+        <div>
+
+
+        <form>
+          <div>
+          <div>
+            <label>Receiver Name</label>
+            <input type = "text" name = "name">
+         </div>
+
+         <div>
+            <label>Receiver Address</label>
+           <textarea name="address"> </textarea>
+         </div>
+
+         <div>
+            <label>Receiver Phone </label>
+            <input type = "text" name = "phone">
+         </div>
+
+         <div>
+           
+            <input class="btn btn-primary" type = "submit" value="Place Order">
+         </div>
+  </div>
     <table class="table_deg">
 
       <tr>
         <th>Title</th> 
         <th>Price</th>
         <th>Art</th>
+       
          
        </tr>
        <?php 
@@ -73,6 +100,7 @@
         <td>{{$cart->product->title}}</td> 
         <td>{{$cart->product->price}}</td>
         <td><img width = 100 height = 100 src="/arts/{{$cart->product->image}}"></td> 
+        
        </tr>
 
        <?php 
@@ -85,6 +113,11 @@
 <div class = "cart">
   <h3> Total value of cart is: ${{$value}} </h3>
   </div>
+
+  </div>
+  </div>
+            </div>
+        </section>
   @include('home.footer')
 </body>
 
