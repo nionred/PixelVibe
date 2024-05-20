@@ -34,5 +34,8 @@ route::get('del_pro/{id}',[AdminController::class,'del_pro'])->middleware(['auth
 route::get('up_pro/{id}',[AdminController::class,'up_pro'])->middleware(['auth','admin']);
 route::post('upd_pro/{id}',[AdminController::class,'upd_pro'])->middleware(['auth','admin']);
 route::get('src',[AdminController::class,'src'])->middleware(['auth','admin']);
+route::get('details/{id}',[HomeController::class,'details']);
+route::get('add/{id}',[HomeController::class,'add'])->middleware(['auth','verified']);
+route::get('mycart',[HomeController::class,'mycart'])->middleware(['auth','verified']);
 
 

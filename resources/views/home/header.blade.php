@@ -33,9 +33,15 @@
               <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
           </ul>
+
+         
           <div class="user_option">
+          
           @if (Route::has('login'))
           @auth
+          <a href="{{url('mycart')}}">
+              <i class="fa fa-shopping-bag" aria-hidden="true"></i>[{{$count}}]
+            </a>
           <form  style = "padding: 14px" method="POST" action="{{ route('logout') }}">
                             @csrf
                          <input class = "btn btn-primary" type ="submit" value="logout">
@@ -57,6 +63,7 @@
              @endauth
              @endif
             
+             
            
           </div>
         </div>
