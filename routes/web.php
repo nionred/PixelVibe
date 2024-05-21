@@ -37,5 +37,6 @@ route::get('src',[AdminController::class,'src'])->middleware(['auth','admin']);
 route::get('details/{id}',[HomeController::class,'details']);
 route::get('add/{id}',[HomeController::class,'add'])->middleware(['auth','verified']);
 route::get('mycart',[HomeController::class,'mycart'])->middleware(['auth','verified']);
-
+route::post('con_order',[HomeController::class,'con_order'])->middleware(['auth','verified']);
+route::get('order',[AdminController::class,'order'])->middleware(['auth','admin']);
 

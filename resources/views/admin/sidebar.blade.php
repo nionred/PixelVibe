@@ -14,6 +14,7 @@
                 <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
                 <li><a href="{{ url('v_cat')}}"> <i class="icon-grid"></i>category </a></li>
                
+               
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Arts </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                     <li><a href="{{url('add_pro')}}">Add arts</a></li>
@@ -21,6 +22,8 @@
                     
                   </ul>
                 </li>
+
+                <li><a href="{{ url('order')}}"> <i class="icon-grid"></i>Orders</a></li>
                
         </ul>
       </nav>

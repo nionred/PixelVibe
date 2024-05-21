@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Cart;
+use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -101,6 +102,34 @@ class HomeController extends Controller
         }
        
         return view('home.mycart',compact('count','cart'));
+    }
+    public function con_order(Request $request)
+    {
+      $name = $request->name;
+      $address = $request->address;
+      $phone = $request->phone;
+      $userid = Auth::user()->id;
+      $cart = Cart::where('user_id',$userid)->get();
+
+       foreach($cart as $carts)
+       {
+        $order = new Order;
+        $order->name = $name;
+        $order->address = $address;
+        $order->phone = $phone;
+        $order->user_id = $userid;
+        $order->art_id = $carts->art_id;
+        $order->save();
+       
+       }
+       $cart_rem = Cart::where('user_id',$userid)->get();
+       foreach($cart_rem as $rem)
+       {
+
+        $data = Cart::find($rem->id);
+        $data->delete();
+       }
+       return redirect()->back();
     }
     
     
